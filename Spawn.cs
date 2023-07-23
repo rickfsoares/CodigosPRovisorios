@@ -15,13 +15,13 @@ public class Spawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         timeCount += Time.deltaTime;
         
         if(timeCount >= spawnTime) // Inicador do spawn
         {
-            GameObject go = Instantiate(prefab, transform.position, transform.rotation, transform);
+            GameObject go = Instantiate(prefab, transform.position, transform.localRotation);
             Destroy(go, 5f); // para que depois de 5 segundos o objeto seja destruido
             timeCount = 0f;
         }

@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
     public float speed;
     public Transform pointR;
     public Transform pointL;
-
+    
     void Start()
     {
         
@@ -27,15 +27,10 @@ public class Ball : MonoBehaviour
     }
     if(Input.GetMouseButton(0))
     {
-        isRight = false; 
-    }
-    else
-    if(Input.GetMouseButton(1))
-    {
-        isRight = true;
+        isRight = !isRight; 
     }
     //Checando se esta precionando o botão esquerdo do mouse ( 0 = esquerdo) (1 = direito)
-    if(Vector2.Distance(transform.position, pointL.position) < 0.1 || Vector2.Distance(transform.position, pointR.position) < 0.1)
+    if(Vector2.Distance(transform.position, pointL.position) < 0.5 || Vector2.Distance(transform.position, pointR.position) < 0.5)
     {
         isRight = !isRight; //Para fazer a bola inverter
     }
